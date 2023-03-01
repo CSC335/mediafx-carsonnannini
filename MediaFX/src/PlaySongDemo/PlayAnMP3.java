@@ -3,7 +3,7 @@ package PlaySongDemo;
 /**
  * This code will play any song assuming that file is in folder songfiles. 
  * 
- * Programmer Rick Mercer
+ * Programmer Rick Mercer, Carson Nannini
  */
 import java.io.File;
 import java.net.URI;
@@ -28,11 +28,14 @@ public class PlayAnMP3 extends Application {
   @Override
   public void start(Stage stage) throws Exception {
     BorderPane pane = new BorderPane();
-    String path = "songfiles/Capture.mp3";
+    // I, Carson Nannini, changed the song being played 
+    String path = "MediaFX/songfiles/DanseMacabreViolinHook.mp3";
     pane.setCenter( new Label(path));
     playASong(path);
     // Put the pane in a sized Scene and show the GUI
-    Scene scene = new Scene(pane, 255, 85); // 255 pixels wide, 85 pixels tall
+    
+    // Changed the Scene size
+    Scene scene = new Scene(pane, 255, 90); // 255 pixels wide, 85 pixels tall
     stage.setScene(scene);
     // Don't forget to show the running app:
     stage.show();
@@ -51,7 +54,8 @@ public class PlayAnMP3 extends Application {
     mediaPlayer.play();
       
     mediaPlayer.setOnEndOfMedia(new Waiter());
-    System.out.println("You may need to shut this App down");
+    // Changed the print statement below
+    System.out.println("You might want to close this App");
  
     }
   
